@@ -1,0 +1,99 @@
+name: crello
+columns:
+  length:
+    dtype: int64
+    lookup:
+      vocabulary:
+        min: 1
+        max: 50
+      num_oov_indices: 0
+      mask_value: null
+  group:
+    dtype: string
+    lookup:
+      mask_token: ''
+      num_oov_indices: 0
+  format:
+    dtype: string
+    lookup:
+      mask_token: ''
+      num_oov_indices: 0
+  canvas_width:
+    dtype: int64
+    lookup:
+      num_oov_indices: 0
+  canvas_height:
+    dtype: int64
+    lookup:
+      num_oov_indices: 0
+  category:
+    dtype: string
+    lookup:
+      mask_token: ''
+      num_oov_indices: 0
+  type:
+    is_sequence: true
+    dtype: string
+    lookup:
+      num_oov_indices: 0
+      mask_token: ''
+    primary_label:
+      default: ''
+  left:
+    is_sequence: true
+    dtype: float32
+    discretize:
+      min: 0.0
+      max: 1.0
+      bins: 64
+  top:
+    is_sequence: true
+    dtype: float32
+    discretize:
+      min: 0.0
+      max: 1.0
+      bins: 64
+  width:
+    is_sequence: true
+    dtype: float32
+    discretize:
+      min: 0.0
+      max: 1.0
+      bins: 64
+  height:
+    is_sequence: true
+    dtype: float32
+    discretize:
+      min: 0.0
+      max: 1.0
+      bins: 64
+  opacity:
+    is_sequence: true
+    dtype: float32
+    discretize:
+      min: 0.0
+      max: 1.0
+      bins: 8
+  color:
+    is_sequence: true
+    shape: [3]
+    dtype: int64
+    discretize:
+      min: 0
+      max: 255
+      bins: 16
+    loss_condition:
+      key: type
+      values:
+        - textElement
+        - coloredBackground
+  image_embedding:
+    is_sequence: true
+    shape: [256]
+    dtype: float32
+    loss_condition:
+      key: type
+      values:
+        - svgElement
+        - imageElement
+        - maskElement

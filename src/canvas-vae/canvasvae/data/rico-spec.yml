@@ -1,0 +1,64 @@
+name: rico
+columns:
+  length:
+    dtype: int64
+    lookup:
+      vocabulary:
+        min: 1
+        max: 50
+      num_oov_indices: 0
+      mask_value: null
+  left:
+    is_sequence: true
+    dtype: float32
+    discretize:
+      min: 0.0
+      max: 1.0
+      bins: 64
+  top:
+    is_sequence: true
+    dtype: float32
+    discretize:
+      min: 0.0
+      max: 1.0
+      bins: 64
+  width:
+    is_sequence: true
+    dtype: float32
+    discretize:
+      min: 0.0
+      max: 1.0
+      bins: 64
+  height:
+    is_sequence: true
+    dtype: float32
+    discretize:
+      min: 0.0
+      max: 1.0
+      bins: 64
+  clickable:
+    is_sequence: true
+    dtype: int64
+    max: 1
+  component:
+    is_sequence: true
+    dtype: string
+    lookup:
+      num_oov_indices: 1
+      mask_token: null
+    primary_label:
+      default: ''
+  icon:
+    is_sequence: true
+    dtype: string
+    min_freq: 500
+    lookup:
+      num_oov_indices: 1
+      mask_token: null
+  text_button:
+    is_sequence: true
+    dtype: string
+    min_freq: 500
+    lookup:
+      num_oov_indices: 1
+      mask_token: null
