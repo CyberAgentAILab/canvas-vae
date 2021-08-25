@@ -80,7 +80,7 @@ from the ICCV 2021 paper in this dataset release.
 
 Dictionaries of vocabulary-frequency for each string field in the dataset.
 
-```json
+```js
 {
   "canvas_height": {
     "1080": 3417,
