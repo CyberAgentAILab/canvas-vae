@@ -1,3 +1,5 @@
+[Dataset](docs/crello-dataset.md) | [arXiv](https://arxiv.org/abs/2108.01249)
+
 # CanvasVAE
 
 Official tensorflow implementation of the following work.
