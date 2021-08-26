@@ -21,6 +21,10 @@ Install python dependencies. Perhaps this should be done inside `venv`.
 pip install -r requirements.txt
 ```
 
+Note that Tensorflow has a version-specific system requirement for GPU environment.
+Check if the
+[compatible CUDA/CuDNN runtime](https://www.tensorflow.org/install/source#gpu) is installed.
+
 ## Crello experiments
 
 Download and extract [Crello dataset](docs/crello-dataset.md). The following
@@ -31,7 +35,8 @@ bin/download_crello.sh
 ```
 
 Prepare image data and learn a PixelVAE model for image embedding. The resulting
-image encoder will be saved to `data/pixelvae/encoder`.
+image encoder will be saved to `data/pixelvae/encoder`. This training takes
+long. We recommend sufficient GPU resources to run this step (e.g., Tesla P100x4).
 
 ```bash
 bin/generate_crello_image.sh
@@ -41,6 +46,7 @@ bin/train_pixelvae.sh
 Build a crello document dataset, and learn CanvasVAE models. The trainer script
 takes a few arguments to control hyperparameters. See
 `src/canvas-vae/canvasvae/main.py` for the list of available options.
+This step can be run in a single GPU environment (e.g., Tesla P100x1).
 
 ```bash
 bin/generate_crello_document.sh
