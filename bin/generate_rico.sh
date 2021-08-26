@@ -2,10 +2,10 @@
 
 export PYTHONPATH="src/preprocess"
 
-RICO_URL="gs://crowdstf-rico-uiuc-4540/rico_dataset_v0.1/semantic_annotations.zip"
+RICO_PATH={1:-"data/semantic_annotations.zip"}
 
 python -m preprocess rico \
-    --input-path ${RICO_URL} \
+    --input-path ${RICO_PATH} \
     --output-path "data/rico" \
     --runner DirectRunner \
     $@

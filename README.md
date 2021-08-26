@@ -61,8 +61,11 @@ the notebook.
 
 ## RICO experiments
 
-Prepare the [RICO dataset](https://interactionmining.org/rico), and learn
-CanvasVAE models.
+Download [UI SCREENSHOTS AND HIERARCHIES WITH SEMANTIC ANNOTATIONS](http://interactionmining.org/rico)
+dataset first. This seems to require Google account. In the following, we assume
+the downloaded archive file is placed in `data/semantic_annotations.zip`.
+
+Once downloaded, preprocess and learn CanvasVAE models.
 
 ```bash
 bin/generate_rico.sh
