@@ -43,9 +43,16 @@ bin/generate_crello_image.sh
 bin/train_pixelvae.sh
 ```
 
-Build a crello document dataset, and learn CanvasVAE models. The trainer script
-takes a few arguments to control hyperparameters. See
-`src/canvas-vae/canvasvae/main.py` for the list of available options.
+The training progress can be monitored via `tensorboard`:
+
+```bash
+tensorboard --logdir tmp/pixelvae/jobs
+```
+
+Once a PixelVAE is trained, build the crello document dataset, and learn
+CanvasVAE models. The trainer script takes a few arguments to control
+hyperparameters.
+See `src/canvas-vae/canvasvae/main.py` for the list of available options.
 This step can be run in a single GPU environment (e.g., Tesla P100x1).
 
 ```bash
@@ -54,8 +61,14 @@ bin/train_canvasvae.sh crello-document --latent-dim 512 --kl 16
 ```
 
 The trainer outputs logs, evaluation results, and checkpoints to
-`tmp/canvasvae/jobs/<job_id>`. The resulting models can be further inspected in
-the notebook.
+`tmp/canvasvae/jobs/<job_id>`. The training progress can be monitored
+via `tensorboard`:
+
+```bash
+tensorboard --logdir tmp/canvasvae/jobs
+```
+
+The resulting models can be further inspected in the notebook.
 
 - `notebooks/crello-analysis.ipynb`
 
