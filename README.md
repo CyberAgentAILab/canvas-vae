@@ -57,7 +57,7 @@ This step can be run in a single GPU environment (e.g., Tesla P100x1).
 
 ```bash
 bin/generate_crello_document.sh
-bin/train_canvasvae.sh crello-document --latent-dim 512 --kl 16
+bin/train_canvasvae.sh crello-document --latent-dim 512 --kl 32
 ```
 
 The trainer outputs logs, evaluation results, and checkpoints to
