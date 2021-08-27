@@ -4,3 +4,4 @@ apache_beam
 PyYAML
 faiss-cpu
 jupyter
+matplotlib
