@@ -8,4 +8,4 @@ if [[ ! -d ${TARGET_DIR} ]]; then
     mkdir -p ${TARGET_DIR}
 fi
 
-cd ${TARGET_DIR} && { curl -O ${DOWNLOAD_URL}; unzip ${DATASET}; cd -; }
+cd ${TARGET_DIR} && { curl -O ${DOWNLOAD_URL}; unzip ${DATASET}; rm ${DATASET}.zip; cd -; }

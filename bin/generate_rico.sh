@@ -8,4 +8,6 @@ python -m preprocess rico \
     --input-path ${RICO_PATH} \
     --output-path "data/rico" \
     --runner DirectRunner \
+    --direct_num_workers 0 \
+    --direct_running_mode "multi_threading" \
     $@
