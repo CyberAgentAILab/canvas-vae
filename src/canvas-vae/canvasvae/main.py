@@ -72,7 +72,7 @@ def parse_args(args=None):
         "--block-type",
         default='deepsvg',
         choices=['lstm', 'transformer', 'deepsvg'],
-        help="Stacked block type.",
+        help="Stacked block type. deepsvg = deepsvg-style transformer block.",
     )
     parser.add_argument(
         "--kl",
