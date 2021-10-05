@@ -29,18 +29,24 @@ class _MakeRecordFn(beam.DoFn):
         src_list = example.feature_lists.feature_list.pop('image_bytes')
         dst_list = example.feature_lists.feature_list.get_or_create(
             'image_embedding')
-        for feature in src_list.feature:
-            image_bytes = feature.bytes_list.value[0]
-            image_embedding = self._compute_embedding(image_bytes)
-            dst_list.feature.append(make_feature(image_embedding, dtype=float))
+        image_bytes = tf.constant(
+            [feature.bytes_list.value[0] for feature in src_list.feature])
+        embeddings = self._compute_embeddings(image_bytes)
+        for x in embeddings.numpy():
+            dst_list.feature.append(make_feature(x.tolist(), dtype=float))
 
         yield example.SerializeToString()
 
-    def _compute_embedding(self, image_bytes):
-        x = tf.io.decode_png(image_bytes, channels=4)
-        x = tf.expand_dims(x, axis=0)
-        x = self._encoder(x)
-        return x[0].numpy().tolist()
+    @tf.function(experimental_relax_shapes=True)
+    def _compute_embeddings(self, image_bytes):
+        images = tf.map_fn(
+            lambda x: tf.io.decode_png(x, channels=4),
+            image_bytes,
+            fn_output_signature=tf.uint8,
+        )
+        embeddings = self._encoder(images)
+        tf.debugging.assert_all_finite(embeddings)
+        return embeddings
 
 
 class GenerateSingleDocumentDataset(beam.PTransform):

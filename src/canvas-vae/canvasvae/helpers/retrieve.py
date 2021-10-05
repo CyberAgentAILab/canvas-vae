@@ -3,6 +3,7 @@ import dbm
 import hashlib
 import logging
 import os
+import sys
 import tempfile
 
 import numpy as np
@@ -51,9 +52,13 @@ class ImageRetriever(object):
     def build(self, encoder, batch_size=16):
         """Compute and build feature index."""
 
+        image_cache_file = self._image_cache_path
+        if sys.platform == 'linux':
+            image_cache_file += '.dat'
+            
         if all(
                 os.path.exists(p) for p in (
-                    self._image_cache_path,
+                    image_cache_file,
                     self._feature_cache_path,
                     self._key_cache_path,
                 )):
