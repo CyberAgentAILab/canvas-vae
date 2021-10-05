@@ -6,6 +6,8 @@ Official tensorflow implementation of the following work.
 
 > Kota Yamaguchi, CanvasVAE: Learning to Generate Vector Graphic Documents, ICCV 2021
 
+![Interpolation](docs/interpolation.svg)
+
 ## Content
 
 - `bin`: Job launchers

@@ -6,6 +6,8 @@ elements such as images or text boxes. The original templates was collected from
 [crello.com](https://crello.com) and converted to low-resolution format suitable
 for machine learning analysis.
 
+![Preview](preview.svg)
+
 ## Download
 
 - [Full dataset (3GB)](https://storage.cloud.google.com/ailab-public/canvas-vae/crello-dataset-v1.zip)
