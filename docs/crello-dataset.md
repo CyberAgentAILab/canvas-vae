@@ -2,7 +2,7 @@
 
 Crello dataset is compiled for the study of vector graphic documents. The
 dataset contains document meta-data such as canvas size and pre-rendered
-elements such as images or text boxes. The original templates was collected from
+elements such as images or text boxes. The original templates were collected from
 [crello.com](https://crello.com) and converted to low-resolution format suitable
 for machine learning analysis.
 
