@@ -6,6 +6,8 @@ elements such as images or text boxes. The original templates was collected from
 [crello.com](https://crello.com) (now [create.vista.com](https://create.vista.com))
 and converted to low-resolution format suitable for machine learning analysis.
 
+![Preview](preview.svg)
+
 ## Download
 
 - [Crello dataset v2 release (3.9 GB)](https://storage.cloud.google.com/ailab-public/canvas-vae/crello-dataset-v2.zip)
