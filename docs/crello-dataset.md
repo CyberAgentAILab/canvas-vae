@@ -8,9 +8,20 @@ and converted to low-resolution format suitable for machine learning analysis.
 
 ![Preview](preview.svg)
 
+## Updates
+
+2023-02-13
+
+[We will migrate dataset hosting to the Hugging Face hub from v3 release.](https://huggingface.co/datasets/cyberagent/crello)
+Please check the following URL.
+
+https://huggingface.co/datasets/cyberagent/crello
+
+The document below describes the v1 and v2 releases.
+
 ## Download
 
-- [Crello dataset v2 release (3.9 GB)](https://storage.cloud.google.com/ailab-public/canvas-vae/crello-dataset-v2.zip)
+- Old [Crello dataset v2 release (3.9 GB)](https://storage.cloud.google.com/ailab-public/canvas-vae/crello-dataset-v2.zip)
 
 ## Content
 
