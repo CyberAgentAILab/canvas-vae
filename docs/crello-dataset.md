@@ -13,9 +13,22 @@ and converted to low-resolution format suitable for machine learning analysis.
 2023-02-13
 
 [We will migrate dataset hosting to the Hugging Face hub from v3 release.](https://huggingface.co/datasets/cyberagent/crello)
-Please check the following URL.
+
+
+```bash
+pip install datasets
+```
+
+```python
+import datasets
+
+dataset = datasets.load_dataset("cyberagent/crello")
+```
+
+Please check the following URL for details.
 
 https://huggingface.co/datasets/cyberagent/crello
+
 
 The document below describes the v1 and v2 releases.
 
